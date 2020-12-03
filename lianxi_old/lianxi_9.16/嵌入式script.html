@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入式script</title>
+</head>
+
+<body>
+    <div id="div1">
+        <a href="js" onclick="zab()">11111</a>
+    </div>
+    <div id="div2">
+        <a href="js">22222</a>
+    </div>
+    <script>
+        let oDiv = document.getElementById('div2')
+        oDiv.onclick = function() {
+            zab()
+        }
+
+        function zab() {
+            alert('这是一个测试界面')
+        }
+    </script>
+</body>
+
+</html>
