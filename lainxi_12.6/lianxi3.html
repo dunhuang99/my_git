@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laixni3</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>小黑记事本</h1>
+        <input v-model="inputValue" type="text" @keyup.enter="add">
+    
+        <ul>
+            <li v-for="(item, index) in listArr">
+                {{ index + 1 }}
+                <h3>{{ item }}</h3>
+                <button @click="sub(index)"> - </button>
+            </li>
+        </ul>
+
+        <div v-show="listArr.length > 0">
+            <h1>{{ listArr.length }}</h1>
+            <button @click="clearAll">clear</button>
+        </div>
+
+    </div>
+
+
+    <script src="./vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                listArr: [],
+                inputValue: ""
+            },
+            methods: {
+                add(){
+                    this.listArr.push(this.inputValue)
+                },
+                sub(index){
+                    this.listArr.splice(index, 1)
+                },
+                getM(){
+                    console.log(this.inputValue);
+                    console.log(this.listArr);
+                },
+
+                clearAll(){
+                    this.listArr = []
+                    console.log(this.listArr.length);
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

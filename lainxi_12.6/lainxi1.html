@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laixni1</title>
+</head>
+<body>
+     
+    <div id="app">
+        <div class="contaian">
+            <img :src="imgArr[index]" alt="">
+            <a href="javascript:viod(0)" @click="prev" v-show="index > 0"/>
+                <img src="./image/left.jpg" alt="">
+            </a>
+            <a href="javascript:viod(0)" @click="next" v-show="index < 3">
+                <img src="./image/right.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <script src="./vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                imgArr: [
+                    "./image/1.png",
+                    "./image/2.png",
+                    "./image/3.png",
+                    "./image/4.png"
+                ],
+                index: 0
+            },
+            methods: {
+                prev(){
+                    this.index--
+                },
+                next(){
+                    this.index++
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

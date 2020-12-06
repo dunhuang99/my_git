@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+</head>
+<body>
+
+    <div id="app">
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list4</li>
+
+            <li v-for="(item, index) in listArr"> {{ item }} {{ index }}</li>
+            <li v-for="(item, index) in objArr"> {{ item.name }} </li>
+            <button @click="add"> + </button>
+        </ul>
+    </div>
+
+    <script src="./vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                listArr: [1, 2, 3, 4, 5],
+                objArr: [
+                    {name: "zhangsan"},
+                    {name: "lisi"},
+                    {name: "lisi"},
+                    {name: "lisi"},
+                    {name: "lisi"},
+                ]
+            },
+            methods: {
+                add(){
+                    this.objArr.push({name:"旺旺"})
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
