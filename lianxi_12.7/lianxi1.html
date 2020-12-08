@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        {{ typeName }}
+        <input v-model="inputValue" type="text" placeholder="登录类型" @keyup.enter="getM">
+        <button @click="changeType">切换类型</button>
+    </div>
+
+    <script src="./vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                typeName: "用户名",
+                inputValue: null
+            },
+            methods: {
+                changeType() {
+                    this.typeName = this.typeName === "用户名" ? "邮箱名" : "用户名"
+                },
+                getM() {
+                    console.log(this.inputValue)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

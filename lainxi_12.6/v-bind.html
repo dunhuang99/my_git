@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <style>
+        .active {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <img :class="{active: isActive}" v-bind:src="imgSrc" width="100px" height="100px" :title="imgTitle + '!!!'">
+        <input type="button" value="点击这里" @click="changeShow">
+    </div>
+
+    <script src="./vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                imgSrc: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+                imgTitle: "百度",
+                isActive: false
+            },
+            methods: {
+                changeShow(){
+                    this.isActive = !this.isActive 
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

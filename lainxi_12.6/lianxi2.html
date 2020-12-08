@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laixni2</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="button" value="点击" @click="doit(666, '老铁')">
+        <input type="text" @keyup.enter="sayhi">
+    </div>
+
+    <script src="./vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                doit(p1, p2){
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayhi(){
+                    alert("哈哈啊")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
