@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>laixni2</title>
 </head>
+
 <body>
 
     <div id="app">
         <input type="button" value="修改" @click="setM">
         <input type="text" v-model="message" @keyup.enter="getM">
         <h2> {{ message }}</h2>
+
+        <p>=====================================================</p>
+        <label v-for="item in originHobbies" :for="item">
+            <input type="checkbox" :id="item" :value="item" v-model="hobbies"> {{ item }}
+        </label>
+
+        <h2> {{ hobbies }}</h2>
+
     </div>
 
     <script src="./vue.js"></script>
@@ -19,17 +29,20 @@
         let app = new Vue({
             el: "#app",
             data: {
-                message: "哈哈"
+                message: "哈哈",
+                hobbies: [],
+                originHobbies: ['篮球', '羽毛球', '排球', '足球']
             },
-            methods:{
-                getM(){
+            methods: {
+                getM() {
                     alert(this.message)
                 },
-                setM(){
+                setM() {
                     this.message = "库听雨"
                 }
             }
         })
     </script>
 </body>
+
 </html>
