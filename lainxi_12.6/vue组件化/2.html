@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <cpn></cpn>
+    </div>
+
+    <template id="cpnm">
+        <div>
+            <!-- <h2>{{ message }}</h2> -->
+            {{ message }}
+            <h2>hello world</h2>
+        </div>
+    </template>
+
+    <script src="../vue.js"></script>
+
+    <script>
+
+        //全局
+        Vue.component('cpn', {
+            template: '#cpnm',
+            data() {
+                return {
+                    message: '哈哈哈'
+                }
+            }
+        })
+
+
+        const app = new Vue({
+            el: "#app",
+            data: {},
+        })
+    </script>
+
+</body>
+</html>
