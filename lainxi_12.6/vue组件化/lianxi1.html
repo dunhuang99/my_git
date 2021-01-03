@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <cpn :number1="num1" :number2="num2" @btnchange="changeNum"></cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <h2>{{ number1 }}</h2>
+            <h2>{{ number2 }}</h2>
+
+            <h2>{{ dnumer1 }}</h2>
+            <h2>{{ dnumer2 }}</h2>
+            <input type="text" v-model="dnumer1" @input="changeNum">
+        </div>
+    </template>
+
+    <script src="../vue.js"></script>
+
+    <script>
+
+        const cpn = {
+            template: '#cpn',
+            data() { 
+                return { 
+                    dnumer1: this.number1,
+                    dnumer2: this.number2,
+                }
+            },
+            props: {
+                number1: Number,
+                number2: Number,
+            },
+            methods: {
+                changeNum(event) {
+                    this.$emit('btnchange', this.dnumer1)
+                }
+            }
+        }
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                num1: 1,
+                num2: 0
+            },
+            components: {
+                cpn
+            },
+
+            methods: {
+                changeNum(value) {
+                    console.log(typeof value)
+                    this.num1 = parseInt(value)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

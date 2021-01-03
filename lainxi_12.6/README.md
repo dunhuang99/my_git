@@ -1,6 +1,6 @@
 ### 数组方法 foreach map filter reduce
 
-#### foreach 知识普通的 for 循环 result1 为 undefined
+#### foreach 只是普通的 for 循环 result1 为 undefined
 
 let result1 = arr.forEach((item, index) =>{
 console.log(item,index)
@@ -55,13 +55,13 @@ console.log(key, obj[key])
 #### for...of... 用来遍历数组，类数组的对象，字符串，set/map, generator // for (item of obj)
 
 let obj = ['张三', '李四', '王五']
-for (key in obj) {
-console.log(key, obj[key])
+for (item of obj) {
+console.log(item)
 }
 
 ### 表单 (v-model)
 
-注意： 必须绑定 value 值 和 onCchange 事件
+注意： 必须绑定 value 值 和 onChange 事件
 
 #### v-model 修饰符
 
@@ -69,4 +69,8 @@ v-model.lazy 在按下 enter 键或失去焦点时再绑定
 
 v-model 通常返回的都是 string 类型， 所以 v-model.number 返回 number 类型
 
-v-nodel.trim 去除 v-model 绑定值的俩边的空格
+v-model.trim 去除 v-model 绑定值的俩边的空格
+
+### props
+
+props 里面的数据由父组件来进行修改，不要双向绑定到子组件的 props 里
