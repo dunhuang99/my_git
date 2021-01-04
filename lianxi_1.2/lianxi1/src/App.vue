@@ -11,27 +11,27 @@
 </template>
 
 <script>
-export default {
-  name: "App",
-  data () {
-    return {
-      userId: 'lisi'
-    }
-  },
-  methods: {
-    clickButtonProfile() {
-      console.log('111111111');
-      this.$router.push({
-        path: '/profile',
-        query: {
-          name: 'whywhy',
-          age: 20,
-          height:230
+    export default {
+        name: "App",
+        data() {
+            return {
+                userId: 'lisi'
+            }
+        },
+        methods: {
+            clickButtonProfile() {
+                console.log('111111111');
+                this.$router.push({
+                    path: '/profile',
+                    query: {
+                        name: 'whywhy',
+                        age: 20,
+                        height: 230
+                    }
+                })
+            }
         }
-      })
-    }
-  }
-};
+    };
 </script>
 
 <style></style>

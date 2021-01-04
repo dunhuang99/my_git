@@ -9,14 +9,13 @@
 </template>
 
 <script>
-
-export default {
-    computed: {
-        userId() {
-            return this.$route.params.userId
+    export default {
+        computed: {
+            userId() {
+                return this.$route.params.userId
+            }
         }
     }
-}
 </script>
 <style>
 
